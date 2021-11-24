@@ -414,6 +414,7 @@ export default {
       if (this.disabled) return;
       if (e.button !== 0) return;
       const { states } = this.store;
+      this.$emit('cellClicked',[x,y,val,type]);
       window.addEventListener('keydown', this.keySubmit);
       window.addEventListener('mousemove', this.multiSelectAdjustPostion);
       if (type === 'selection') return;
